@@ -1,0 +1,3 @@
+# Stores information about all libraries, modules and packages that are used in the development of a particular project. It also stores all the files and packages that this project depends on or needs to run.
+SpeechRecognition=3.9.0
+PyAudio=0.2.13
