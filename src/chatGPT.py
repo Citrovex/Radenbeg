@@ -36,6 +36,3 @@ def askGPT(request: str = '') -> str:
                 pass
 
     return result
-
-
-print(askGPT('скільки живуть коти?'))
