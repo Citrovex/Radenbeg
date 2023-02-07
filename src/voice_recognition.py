@@ -5,10 +5,14 @@ import speech_recognition as sr
 r = sr.Recognizer()
 
 
-def listen(callback: Callable[[str]]):
+def listen(callback: Callable[[str], None], autoContinue = False):
+    firstRun = True
     if callback:
-        while True:
+        while firstRun or autoContinue:
             with sr.Microphone() as source:
                 audio = r.listen(source)
                 audio_text = r.recognize_google(audio, language="uk-UA")
                 callback(audio_text)
+            
+            if firstRun:
+                firstRun = False

@@ -1,9 +1,9 @@
 import json
 import platform
 
-from chatGPT import askGPT
-from text_voiceover import say
-from voice_recognition import listen
+from src.chatGPT import askGPT
+from src.text_voiceover import say
+from src.voice_recognition import listen
 
 
 def executePyCode(command: str):
