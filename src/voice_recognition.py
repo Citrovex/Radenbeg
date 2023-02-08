@@ -1,4 +1,3 @@
-from typing import Callable
 import speech_recognition as sr
 
 # Initialize recognizer class (for recognizing the speech)
