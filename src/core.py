@@ -1,10 +1,10 @@
 import json
 import platform
-from AI_settings import AISettings
 
-from chatGPT import askGPT
-from text_voiceover import say
-from voice_recognition import listen
+from src.AI_settings import AISettings
+from src.chatGPT import askGPT
+from src.text_voiceover import say
+from src.voice_recognition import listen
 
 
 def formatRequest(request: str):
@@ -24,24 +24,25 @@ def processRequest(request=''):
     if not request:
         return
 
-    response = askGPT()
+    response = askGPT(formatRequest(request))
+
+    print('\n\n\n')
+    print('REQUEST:', request)
+    print('RESPONSE:', response)
+
     try:
         resp = json.load(response)
         code = resp['command']
         message = resp['message']
 
-        return {code: code, message: message}
-    except SyntaxError as _e:
-        pass
-
-    print('\n\n\n')
-    print('REQUEST:', request)
-    print('RESPONSE:', response)
+        return {'code': code, 'message': message}
+    except:
+        return {'code': None, 'message': None}
 
 
 def start():
     phrases = listen(True)
     for phrase in phrases:
         result = processRequest(phrase)
-        executePyCode(result.code)
-        say(result.message)
+        executePyCode(result['code'])
+        say(result['message'])

@@ -10,7 +10,7 @@ def listen(autoContinue=False):
         with sr.Microphone() as source:
             try:
                 audio = r.listen(source)
-                audio_text = r.recognize_google(audio, language="de-DE")
+                audio_text = r.recognize_google(audio, language="uk-UA")
                 yield audio_text
             except sr.UnknownValueError as _e:
                 pass
