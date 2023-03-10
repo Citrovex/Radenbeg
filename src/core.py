@@ -51,7 +51,3 @@ def start():
         result = processRequest(phrase)
         executePyCode(result['code'])
         say(result['answer'])
-
-
-executePyCode(processRequest(
-    formatRequest('Open random Youtube video'))['code'])
