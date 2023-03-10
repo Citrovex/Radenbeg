@@ -1,5 +1,4 @@
 import json
-import platform
 
 from src.AI_settings import GetAISettings
 from src.chatGPT import askGPT
