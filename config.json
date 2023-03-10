@@ -1,0 +1,7 @@
+{ "$schema": {
+  "OS": "windows",
+  "language": "english",
+  "nameOfUser": "Jerry",
+  "nameOfBot": "Radenbeg (Rad)",
+  "formats": "24-hour, dd.mm.yyyy, Celsius, metric"
+} }
