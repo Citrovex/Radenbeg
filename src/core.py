@@ -9,10 +9,7 @@ AI_SETTINGS = GetAISettings()
 
 
 def formatRequest(request: str):
-    formattedRequest = {
-        "request": request
-    }
-    return f'{AI_SETTINGS}{json.dumps(formattedRequest)}'
+    return f'{AI_SETTINGS}{{"request": "{request}"}}'
 
 
 def executePyCode(command: str):
