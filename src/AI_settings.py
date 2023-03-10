@@ -1,6 +1,4 @@
-import json
-
-from src.configurator import getConfig
+from .configurator import getConfig
 
 
 def AISettings(OS, language, nameOfBot, nameOfUser, formats):
@@ -20,7 +18,7 @@ def AISettings(OS, language, nameOfBot, nameOfUser, formats):
         {{"code": "[write your Python code here]", "answer": "[write your answer here]"}}
 
         You can import and use only the following python libraries in your code: numpy, pandas, cv2, bs4, requests, pyautogui, PyPDF2, PIL, AppOpener, pyperclip, pyttsx3. You can also use all the native Python libraries such as os.
-        Write the python code in one string and use "\\n" to mark new line.
+        Write the python code in one string and always use "\\n" to mark new line.
         Don't use variables that user should replace in your code (e.g. API keys, URL addresses etc.)
 
         Write your code only inside the 'code' property.
