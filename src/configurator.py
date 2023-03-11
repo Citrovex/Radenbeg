@@ -8,7 +8,6 @@ def getConfig():
         schema = data["$schema"]
         if schema:
             language = schema["language"]
-            languageCode = schema["languageCode"]
             nameOfUser = schema["nameOfUser"]
             nameOfBot = schema["nameOfBot"]
             formats = schema["formats"]
@@ -16,7 +15,6 @@ def getConfig():
             return {
                 'OS': platform.system(),
                 'language': language,
-                'languageCode': languageCode,
                 'nameOfBot': nameOfBot,
                 'nameOfUser': nameOfUser,
                 'formats': formats
@@ -25,11 +23,10 @@ def getConfig():
     jsonFile.close()
 
 
-def setConfig(OS: str, language: str, languageCode: str, nameOfBot: str, nameOfUser: str, formats: str):
+def setConfig(OS: str, language: object, nameOfBot: str, nameOfUser: str, formats: str):
     data = {
         OS: OS,
         'language': language,
-        'languageCode': languageCode,
         'nameOfBot': nameOfBot,
         'nameOfUser': nameOfUser,
         'formats': formats

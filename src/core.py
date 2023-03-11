@@ -1,15 +1,12 @@
 import json
+from .AI.AI_settings import formatRequest
 
-from .AI_settings import GetAISettings
-from .chatGPT import askGPT
+from .AI.ai import AI
+
 from .text_voiceover import say
 from .voice_recognition import listen
 
-AI_SETTINGS = GetAISettings()
-
-
-def formatRequest(request: str):
-    return f'{AI_SETTINGS}{{"request": "{request}"}}'
+ai = AI()
 
 
 def executePyCode(command: str):
@@ -20,14 +17,13 @@ def executePyCode(command: str):
             print('Error: could not execute command. Message: {0}'.format(e))
 
 
-def processRequest(request=''):
+async def processRequest(request=''):
     if not request:
         return
 
-    response = askGPT(formatRequest(request))
+    response = await ai.ask(formatRequest(request))
 
     print('\n\n\n')
-    print(formatRequest(request))
     print('REQUEST:', request)
     print('RESPONSE:', response)
 
@@ -42,9 +38,11 @@ def processRequest(request=''):
         return {'code': None, 'answer': None}
 
 
-def start():
+async def start():
+    await ai.initBing()
+
     phrases = listen(True)
     for phrase in phrases:
-        result = processRequest(phrase)
+        result = await processRequest(phrase)
         executePyCode(result['code'])
         say(result['answer'])

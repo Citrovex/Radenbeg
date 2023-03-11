@@ -1,7 +1,8 @@
-{ "$schema": {
-  "language": "ukrainian",
-  "languageCode": "uk-UA",
-  "nameOfUser": "Jerry",
-  "nameOfBot": "Radenbeg (shorter: Rad)",
-  "formats": "24-hour, dd.mm.yyyy, Celsius, metric"
-} }
+{
+  "$schema": {
+    "language": { "name": "ukrainian", "code": "uk" },
+    "nameOfUser": "Джон",
+    "nameOfBot": "Core",
+    "formats": "24-hour, dd.mm.yyyy, Celsius, metric"
+  }
+}
