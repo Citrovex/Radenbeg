@@ -20,7 +20,7 @@ def AISettings(OS, language, nameOfBot, nameOfUser, formats, inlineRequest):
         You should answer only in the following JSON format:
         {{"code": "[write your Python code here]", "answer": "[write your answer here]"}}
 
-        You can import and use only the following python libraries in your code: numpy, pandas, cv2, bs4, requests, pyautogui, PyPDF2, PIL, AppOpener, pyperclip, pyttsx3. You can also use all the native Python libraries such as os.
+        You can import and use only the following python libraries in your code: numpy, pandas, cv2, bs4, requests, pyautogui, PyPDF2, PIL, AppOpener, pyperclip, gTTS, playsound. You can also use all the native Python libraries such as os.
         Write the python code in one string and mark new line as "\\n" to make it possible to parse the JSON answer.
         Don't use variables that user should replace in your code (e.g. API keys, URL addresses etc.)
 
