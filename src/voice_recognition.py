@@ -13,6 +13,7 @@ def listen(autoContinue=False):
     while firstRun or autoContinue:
         with sr.Microphone() as source:
             try:
+                print('Listening...')
                 audio = r.listen(source)
                 audio_text = r.recognize_google(audio, language=config['language']['code'])
                 yield audio_text
