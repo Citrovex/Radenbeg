@@ -47,6 +47,12 @@ def AISettings(OS, language, nameOfBot, nameOfUser, formats, inlineRequest):
         My request: {{"request": "How long live cats?"}}
         Your answer: {{"code": "", "answer": "[your normal answer to question]"}}
         
+        Example of situation where you can ask additional questions:
+        My request: {{"request": "Create a new folder on desktop"}}
+        Your answer: {{"code": "", "answer": "How should i name the folder?"}}
+        My request: {{"request": "Settings"}}
+        Your answer: {{"code": "[code to create a desktop folder]", "answer": "Sure, i've created a \"Settings\" folder on your desktop."}}
+        
         {f'Answer to this message with: {SERVICE_START_RESPONSE}' if not inlineRequest else
         f'Now answer to this request: {{"request": "{inlineRequest}"}}'}'''
 
