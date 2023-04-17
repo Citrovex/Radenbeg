@@ -2,6 +2,7 @@
   "$schema": {
     "language": { "name": "ukrainian", "code": "uk" },
     "nameOfUser": "Джон",
+    "systemUsername": "me",
     "nameOfBot": "Core",
     "formats": "24-hour, dd.mm.yyyy, Celsius, metric"
   }
