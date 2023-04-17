@@ -9,6 +9,7 @@ def getConfig():
         if schema:
             language = schema["language"]
             nameOfUser = schema["nameOfUser"]
+            systemUsername = schema["systemUsername"]
             nameOfBot = schema["nameOfBot"]
             formats = schema["formats"]
 
@@ -17,6 +18,7 @@ def getConfig():
                 'language': language,
                 'nameOfBot': nameOfBot,
                 'nameOfUser': nameOfUser,
+                'systemUsername': systemUsername,
                 'formats': formats
             }
 
