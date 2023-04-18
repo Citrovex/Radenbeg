@@ -30,6 +30,10 @@ def AISettings(OS, language, nameOfBot, nameOfUser, systemUsername, formats, inl
 
         'code' — required only if user asked to do an action and if the action can be done on user's OS and can be done with allowed libraries.
         'answer' — optional.
+        
+        You can ask additional question if users question was not enough specific.
+        
+        You can use the predefined "callback()" function in your code to make a request to yourself on behalf of the user. Use it to trigger yourself when needed. This function takes one required string parameter as the message text.
 
         Don't write anything except this answer JSON format.
         Don't add notes.
@@ -53,6 +57,12 @@ def AISettings(OS, language, nameOfBot, nameOfUser, systemUsername, formats, inl
         Your answer: {{"code": "", "answer": "How should i name the folder?"}}
         My request: {{"request": "Settings"}}
         Your answer: {{"code": "[code to create a desktop folder]", "answer": "Sure, i've created a \"Settings\" folder on your desktop."}}
+        
+        Example of using the "callback" function:
+        My request: {{"request": "Remind me go to the doctor in 2 hours."}}
+        Your answer: {{"code": "import time\ntime.sleep(7200000)\ncallback('[callback] reminder: go to the doctor')", "answer": "Sure, the reminder is set."}}
+        My request: {{"request": "[callback] reminder: go to the doctor"}}
+        Your answer: {{"code": "", "answer": "Don't forget: go to the doctor"}}
         
         {f'Answer to this message with: {SERVICE_START_RESPONSE}' if not inlineRequest else
         f'Now answer to this request: {{"request": "{inlineRequest}"}}'}'''
